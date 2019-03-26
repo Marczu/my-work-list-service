@@ -9,20 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
 @Getter
 @Setter
 public class Todo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String username;
     private String description;
     private Date targetDate;
     private boolean isDone;
 
-    public Todo(String username, String description, Date targetDate, boolean isDone) {
+    public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
+        this.id = id;
         this.username = username;
         this.description = description;
         this.targetDate = targetDate;
